@@ -1,0 +1,6 @@
+<%@ page pageEncoding="UTF-8" %>
+<footer>
+    <div class="footer">
+        <div class="container">Copyright &copy; 2021 Anton Chaban</div>
+    </div>
+</footer>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Vacancies:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Vacancies</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Vacancies-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Vacancies:war exploded" />
+    </root>
+  </artifact>
+</component>
