@@ -1,5 +1,6 @@
 <%@ page pageEncoding="UTF-8" %>
 <style>
+
     * {
         box-sizing: border-box;
     }
@@ -205,5 +206,18 @@
         margin-left: 18px;
     }
 
-
+    .v-exp-edit{
+        margin-bottom: 10px;
+    }
+    .v-description-edit{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .v-title-edit{
+        margin-bottom: 10px;
+    }
+    .v-education-edit{
+        margin-bottom: 5px;
+    }
 </style>
