@@ -75,7 +75,7 @@ public class FrontController extends HttpServlet {
             highEducation = true;
         }
 
-        Vacancy vacancy = new Vacancy(user.getUserId(),request.getParameter("vacName"),request.getParameter("description"),
+        Vacancy vacancy = new Vacancy(user.getUserId(), request.getParameter("vacName"), request.getParameter("description"),
                 new VacRequirements(Integer.parseInt(request.getParameter("exp")), highEducation));
 
         vacService.newVac(vacancy, user);

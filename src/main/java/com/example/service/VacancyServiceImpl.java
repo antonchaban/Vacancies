@@ -5,7 +5,6 @@ import com.example.models.User;
 import com.example.models.Vacancy;
 
 import java.util.Collection;
-import java.util.HashMap;
 
 public class VacancyServiceImpl implements VacancyService {
     DaoFactory daoFactory;
@@ -19,13 +18,6 @@ public class VacancyServiceImpl implements VacancyService {
         return daoFactory.getVacancyDao().findAll();
     }
 
-    @Override
-    public Collection<Vacancy> searchByReq(HashMap<String, Object> req) {
-        if (req.isEmpty()) {
-            return getAllVacancies();
-        }
-        return daoFactory.getVacancyDao().findByReq(req);
-    }
 
     @Override
     public Collection<Vacancy> searchByText(String string) {

@@ -8,7 +8,6 @@ import java.util.HashMap;
 
 public interface VacancyService {
     Collection<Vacancy> getAllVacancies();
-    Collection<Vacancy> searchByReq(HashMap<String, Object> req);
     Collection<Vacancy> searchByText(String string);
     Vacancy getVacById(Integer vacId);
     void delVac(Vacancy vacancy, User user);

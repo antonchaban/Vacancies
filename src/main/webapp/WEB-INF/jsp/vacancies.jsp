@@ -12,7 +12,6 @@
     <title>Vacancies</title>
     <%@include file="style.jspf" %>
 </head>
-<br>
 <%@include file="header.jspf" %>
 <section>
     <table border="1" width="100%" class="movies-table">
