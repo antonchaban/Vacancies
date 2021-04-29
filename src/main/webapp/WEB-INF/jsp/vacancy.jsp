@@ -11,33 +11,46 @@
 <head>
     <title><c:out value="${vacancy.vacName}"/></title>
     <%@include file="style.jspf" %>
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
 <%@include file="header.jspf" %>
-<h1 align="center"><c:out value="${vacancy.vacName}"/></h1>
-<hr>
-<h4 align="center"><c:out value="${vacancy.description}"/></h4>
-<hr>
-<c:if test="${vacancy.requirements.experience <= 0}">
-<h5><c:out value="No experience required"/></h5>
-</c:if>
-<c:if test="${vacancy.requirements.experience > 0}">
-    <h5><c:out value="Experince required: ${vacancy.requirements.experience} years"/></h5>
-</c:if>
-</br>
-<c:if test="${vacancy.requirements.highEducation}">
-    <h5>  <c:out value="Higher education required"/></h5>
-</c:if>
-<c:if test="${!vacancy.requirements.highEducation}">
-    <h5><c:out value="Higher education not required"/></h5>
-</c:if>
-<hr>
-<c:if test="${vacancy.userId == user.userId}">
-    <form action="vacedit" method="POST">
-        <input type="hidden" name="vacId" value="${vacancy.vacId}">
-        <button type="submit">EDIT</button>
-    </form>
-</c:if>
+<div class="vacinfo-center">
+    <div class="vacinfo-wrapper">
+        <h1 align="center"><c:out value="${vacancy.vacName}"/></h1>
+        <hr>
+        <ul class="requirements">
+            <c:if test="${vacancy.requirements.experience <= 0}">
+                <li>Job Experience: <span style="color: #22ff22"><c:out value="No exp required"/></span></li>
+            </c:if>
+            <c:if test="${vacancy.requirements.experience > 0}">
+                <li>Job Experience: <span style="color: red"><c:out
+                        value="Exp required: ${vacancy.requirements.experience} years"/></span></li>
+            </c:if>
+            <c:if test="${vacancy.requirements.highEducation}">
+                <li>Higher Education: <span style="color: red"><c:out value="Required"/></span></li>
+            </c:if>
+            <c:if test="${!vacancy.requirements.highEducation}">
+                <li>Higher Education: <span style="color: #22ff22"><c:out value="Not Required"/></span></li>
+            </c:if>
+            <li class="description">
+                <c:out value="${vacancy.description}"/>
+            </li>
+        </ul>
+        <c:if test="${vacancy.userId == user.userId}">
+            <form action="vacedit" method="POST">
+                <input type="hidden" name="vacId" value="${vacancy.vacId}">
+                <button class="more" type="submit">EDIT</button>
+            </form>
+        </c:if>
+    </div>
+</div>
 <%@include file="footer.jspf" %>
 </body>
 </html>

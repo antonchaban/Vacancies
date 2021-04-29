@@ -17,20 +17,38 @@
             height: 100px;
             resize: none;
         }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
 <%@include file="header.jspf" %>
-<form class="edit-form" action="vacsave" method="POST">
-    <input type="hidden" name="vacId" value="${vacancy.vacId}">
-    Vacancy Title: <input type="text" name="vacName" placeholder="Vacancy Title" required/>
-    Description: <textarea type="text" name="description" required placeholder="Vacancy Description"></textarea>
-    Experience: <input type="number" name="exp" placeholder="Experience" required/>
-    High Education: <input type="checkbox" name="highEducation"/>
-    <hr>
-    <input id="save" type="submit" value="Save"/>
+<div class="vacinfo-center">
+    <div class="vacinfo-wrapper">
+        <form class="edit-form" action="vacsave" method="POST">
+            <input type="hidden" name="vacId" value="${vacancy.vacId}">
+            <div class="v-title-edit">
+                Vacancy Title: <input type="text" name="vacName" required/>
+            </div>
+            <div class="v-description-edit"> Description:
+                <textarea type="text" name="description" required></textarea>
+            </div>
+            <div class="v-exp-edit">
+                Experience: <input type="number" name="exp"  required/>
+            </div>
+            <div class="v-education-edit">
+                High Education: <input type="checkbox" name="highEducation"/>
+            </div>
+            <hr>
+            <input class="more" id="save" type="submit" value="Save"/>
 
-</form>
+            </form>
+    </div>
+</div>
 <%@include file="footer.jspf" %>
 </body>
 </html>

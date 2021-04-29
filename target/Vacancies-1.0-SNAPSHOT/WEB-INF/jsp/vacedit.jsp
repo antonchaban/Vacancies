@@ -17,24 +17,43 @@
             height: 100px;
             resize: none;
         }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        }
     </style>
+
 </head>
 <body>
 <%@include file="header.jspf" %>
-<form class="edit-form" action="vacupdate" method="POST">
-    <input type="hidden" name="vacId" value="${vacancy.vacId}">
-    Vacancy Title: <input type="text" name="vacName" value="${vacancy.vacName}" required/>
-    Description: <textarea type="text" name="description" required><c:out value="${vacancy.description}"/></textarea>
-    Experience: <input type="number" name="exp" value="${vacancy.requirements.experience}" required/>
-    High Education: <input type="checkbox" name="highEducation"
-        <c:if test="${vacancy.requirements.highEducation}">
-            checked
-        </c:if> />
-    <hr>
-    <input id="update" type="submit" value="Update"/>
-    <input id="delete" type="submit" value="Delete" formaction="vacdel"/>
+<div class="vacinfo-center">
+    <div class="vacinfo-wrapper">
+        <form class="edit-form" action="vacupdate" method="POST">
+            <input type="hidden" name="vacId" value="${vacancy.vacId}">
+            <div class="v-title-edit">
+                Vacancy Title: <input type="text" name="vacName" value="${vacancy.vacName}" required/>
+            </div>
+            <div class="v-description-edit"> Description:
+                <textarea type="text" name="description" required><c:out value="${vacancy.description}"/></textarea>
+            </div>
+            <div class="v-exp-edit">
+                Experience: <input type="number" name="exp" value="${vacancy.requirements.experience}" required/>
+            </div>
+            <div class="v-education-edit">
+                High Education: <input type="checkbox" name="highEducation"
+                    <c:if test="${vacancy.requirements.highEducation}">
+                        checked
+                    </c:if> />
+            </div>
+            <hr>
+            <input class="more" id="update" type="submit" value="Update"/>
+            <input class="more" id="delete" type="submit" value="Delete" formaction="vacdel"/>
 
-</form>
+            </form>
+        </form>
+    </div>
 <%@include file="footer.jspf" %>
 </body>
 </html>
