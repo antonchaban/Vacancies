@@ -3,8 +3,6 @@
 <header>
     <div class="topnav">
         <a class="active" href="/do/">Home</a>
-        <a href="../../about.jsp">About</a>
-        <a href="../../contact.jsp">Contact</a>
         <c:if test="${!empty user}">
             <div class="creating">
                 <form action="vacnew" method="POST">
@@ -24,6 +22,7 @@
             <div class="login-container">
                 <form action="../../login.jsp" method="POST">
                     <button type="submit">Login</button>
+                    <button type="submit" formaction="../../register.jsp">Register</button>
                 </form>
             </div>
         </c:if>

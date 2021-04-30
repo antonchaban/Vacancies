@@ -166,7 +166,7 @@
                 <input type="email" id="email" name="login">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password">
-                <input type="submit" id="submit" value="Submit">
+                <input type="submit" id="submit" value="Login">
             </form>
         </div>
     </div>

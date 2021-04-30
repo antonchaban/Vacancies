@@ -9,5 +9,5 @@ public interface UserDao extends AbstractDao<User>{
 
     void addVac(User user, Vacancy vacancy);
     void delVac(User user, Vacancy vacancy);
-
+    void newUser(User user);
 }

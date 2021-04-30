@@ -41,6 +41,7 @@ public class InMemoryAbstractDao<T> implements AbstractDao<T> {
             idSetter.accept(entity, maxId + 1);
         }
         entities.put(idGetter.apply(entity), entity);
+
     }
 
     @Override

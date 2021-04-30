@@ -55,6 +55,9 @@ public class FrontController extends HttpServlet {
                 case "/vacupdate":
                     vacupdate(request, response);
                     break;
+                case "/register":
+                    register(request, response);
+                    break;
                 case "/":
                 case "/search":
                 default:
@@ -64,6 +67,22 @@ public class FrontController extends HttpServlet {
         } catch (RuntimeException ex) {
             error(request, response, "Oops, " + ex.getMessage());
         }
+
+    }
+
+    protected void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getSession().invalidate();
+        String login = request.getParameter("login");
+        if (userService.checkUser(login)) {
+            error(request, response, "Sorry, user with " + login + " is already exists");
+            return;
+        }
+        String password = request.getParameter("password");
+        User user = new User(login, login, password);
+
+        userService.newUser(user);
+        request.getSession().setAttribute("user", user);
+        response.sendRedirect(".");
 
     }
 
@@ -122,11 +141,9 @@ public class FrontController extends HttpServlet {
         Vacancy vacancy = vacService.getVacById(vacId);
         User user = (User) request.getSession().getAttribute("user");
 
-        if (vacId == user.getMyVacs().get(vacId).getUserId())
-        {
+        if (vacId == user.getMyVacs().get(vacId).getUserId()) {
             vacService.delVac(vacancy, user);
-        }
-        else error(request, response, "Not your vacancy");
+        } else error(request, response, "Not your vacancy");
         response.sendRedirect("main");
     }
 

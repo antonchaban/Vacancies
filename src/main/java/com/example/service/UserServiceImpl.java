@@ -37,4 +37,9 @@ public class UserServiceImpl implements UserService {
         return true;
     }
 
+    @Override
+    public void newUser(User user) {
+        daoFactory.getUserDao().newUser(user);
+    }
+
 }

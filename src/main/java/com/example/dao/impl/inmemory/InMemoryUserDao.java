@@ -31,4 +31,10 @@ public class InMemoryUserDao extends InMemoryAbstractDao<User> implements UserDa
     public void delVac(User user, Vacancy vacancy) {
         user.getMyVacs().remove(vacancy.getVacId());
     }
+
+    @Override
+    public void newUser(User user) {
+        this.insert(user, true);
+        user.setUserId(this.idGetter.apply(user));
+    }
 }
