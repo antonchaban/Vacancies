@@ -122,7 +122,11 @@ public class FrontController extends HttpServlet {
         Vacancy vacancy = vacService.getVacById(vacId);
         User user = (User) request.getSession().getAttribute("user");
 
-        vacService.delVac(vacancy, user);
+        if (vacId == user.getMyVacs().get(vacId).getUserId())
+        {
+            vacService.delVac(vacancy, user);
+        }
+        else error(request, response, "Not your vacancy");
         response.sendRedirect("main");
     }
 
