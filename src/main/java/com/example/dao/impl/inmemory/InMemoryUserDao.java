@@ -4,10 +4,6 @@ import com.example.dao.UserDao;
 import com.example.models.User;
 import com.example.models.Vacancy;
 
-import java.util.Map;
-import java.util.function.BiConsumer;
-import java.util.function.Function;
-
 public class InMemoryUserDao extends InMemoryAbstractDao<User> implements UserDao {
     InMemoryUserDao(InMemoryDatabase database) {
         super(database.users, User::getUserId, User::setUserId, database);

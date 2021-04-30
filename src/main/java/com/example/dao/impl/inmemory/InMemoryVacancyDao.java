@@ -2,13 +2,10 @@ package com.example.dao.impl.inmemory;
 
 import com.example.dao.VacancyDao;
 import com.example.models.User;
-import com.example.models.VacRequirements;
 import com.example.models.Vacancy;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

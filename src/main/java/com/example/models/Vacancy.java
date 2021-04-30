@@ -1,7 +1,5 @@
 package com.example.models;
 
-import java.time.Instant;
-
 public class Vacancy {
     private Integer vacId;
     private Integer userId;

@@ -3,16 +3,14 @@ package com.example.web;
 import com.example.dao.DaoFactory;
 import com.example.dao.impl.inmemory.InMemoryDatabase;
 import com.example.dao.impl.inmemory.InMemoryTestData;
-import com.example.models.User;
 import com.example.service.UserService;
 import com.example.service.UserServiceImpl;
 import com.example.service.VacancyService;
 import com.example.service.VacancyServiceImpl;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
-import java.io.IOException;
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 import java.util.function.UnaryOperator;
 
 @WebListener

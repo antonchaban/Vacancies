@@ -4,7 +4,6 @@ import com.example.models.User;
 import com.example.models.Vacancy;
 
 import java.util.Collection;
-import java.util.HashMap;
 
 public interface VacancyService {
     Collection<Vacancy> getAllVacancies();
@@ -13,6 +12,4 @@ public interface VacancyService {
     void delVac(Vacancy vacancy, User user);
     void updVac(Vacancy vacancy);
     void newVac(Vacancy vacancy, User user);
-
-
 }
